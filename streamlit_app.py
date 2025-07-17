@@ -170,6 +170,7 @@ with st.container():
         <div class='centered'>
             <div class='judul'>Perhitungan Spektrofotometri</div>
             <div class='subjudul'>📚 Selamat Datang di Aplikasi Kami!</div>
+            <div class='img-container'>
                 <img src='https://cdn-icons-png.flaticon.com/512/2933/2933116.png' width='150'/>
             </div>
             <div class='desc'>
@@ -385,96 +386,94 @@ with st.container():
                 st.error(f"Error: {e}")
     
     elif menu == "📖 Tentang Kami":
-        st.header("📖 Tentang Kami")
-        
-        # Deskripsi proyek
-        st.markdown("""
-        <div style="background-color: #f0f2f6; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
-            <h3 style="color: #1f77b4; margin-top: 0;">Tentang Proyek Ini</h3>
-            <p>Aplikasi ini dikembangkan sebagai bagian dari tugas kelompok mata kuliah Spektrofotometri yang bertujuan untuk 
-            memudahkan perhitungan analisis kuantitatif menggunakan spektrofotometer UV-Vis. Proyek ini merupakan hasil kolaborasi tim 
-            yang terdiri dari 5 mahasiswa yang berdedikasi.</p>
-        </div>
-        """, unsafe_allow_html=True)
-        
-        # Tim pengembang
-        st.subheader("👥 Tim Pengembang")
-        
-        anggota = [
-            {"nama": "Devi Triana Rahmadina", "nim": "2460352"},
-            {"nama": "Indra Alfin Nur Riski", "nim": "2460389"},
-            {"nama": "Muhammad Diptarrama Rids", "nim": "2460436"},
-            {"nama": "Saskia Arizqa Syaakirah", "nim": "2460511"},
-            {"nama": "Yasmin Anbarcitra", "nim": "2460536"},
-        ]
-        
-        # Tampilkan dalam format list yang clean
-        for i, member in enumerate(anggota, 1):
-            col1, col2, col3 = st.columns([1, 4, 2])
-            
-            with col1:
-                st.markdown(f"""
-                <div style="display: flex; align-items: center; justify-content: center; 
-                            width: 40px; height: 40px; border-radius: 50%; 
-                            background: linear-gradient(45deg, #1f77b4, #ff7f0e); 
-                            color: white; font-weight: bold; font-size: 18px;">
-                    {i}
-                </div>
-                """, unsafe_allow_html=True)
-            
-            with col2:
-                st.markdown(f"""
-                <div style="padding: 10px 0;">
-                    <h4 style="margin: 0; color: #2c3e50; font-size: 18px;">{member['nama']}</h4>
-                    <p style="margin: 0; color: #7f8c8d; font-size: 14px;">NIM: {member['nim']}</p>
-                </div>
-                """, unsafe_allow_html=True)
-            
-            with col3:
-                st.markdown(f"""
-                <div style="padding: 10px 0; text-align: right;">
-                    <span style="background: #e8f4f8; color: #1f77b4; padding: 4px 8px; 
-                               border-radius: 12px; font-size: 12px; font-weight: 500;">
-                        Anggota
-                    </span>
-                </div>
-                """, unsafe_allow_html=True)
-            
-            if i < len(anggota):
-                st.markdown('<hr style="margin: 15px 0; border: 0.5px solid #ecf0f1;">', unsafe_allow_html=True)
-        
-        # Informasi tambahan
-        st.markdown("---")
-        
-        col1, col2 = st.columns(2)
+    st.header("📖 Tentang Kami")
+    
+    # Deskripsi proyek
+    st.markdown("""
+    <div style="background-color: #f0f2f6; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+        <h3 style="color: #1f77b4; margin-top: 0;">Tentang Proyek Ini</h3>
+        <p>Aplikasi ini dikembangkan sebagai bagian dari tugas kelompok yang bertujuan untuk 
+        [jelaskan tujuan aplikasi Anda di sini]. Proyek ini merupakan hasil kolaborasi tim 
+        yang terdiri dari 5 mahasiswa yang berdedikasi.</p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Tim pengembang
+    st.subheader("👥 Tim Pengembang")
+    
+    anggota = [
+        {"nama": "Devi Triana Rahmadina", "nim": "2460352"},
+        {"nama": "Indra Alfin Nur Riski", "nim": "2460389"},
+        {"nama": "Muhammad Diptarrama Rids", "nim": "2460436"},
+        {"nama": "Saskia Arizqa Syaakirah", "nim": "2460511"},
+        {"nama": "Yasmin Anbarcitra", "nim": "2460536"},
+    ]
+    
+    # Tampilkan dalam format list yang clean
+    for i, member in enumerate(anggota, 1):
+        col1, col2, col3 = st.columns([1, 4, 2])
         
         with col1:
-            st.subheader("🛠️ Teknologi")
-            st.markdown("""
-            - **Framework:** Streamlit
-            - **Bahasa:** Python
-            - **Library:** Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn
-            - **Metode:** Regresi Linear untuk Kurva Kalibrasi
-            """)
+            st.markdown(f"""
+            <div style="display: flex; align-items: center; justify-content: center; 
+                        width: 40px; height: 40px; border-radius: 50%; 
+                        background: linear-gradient(45deg, #1f77b4, #ff7f0e); 
+                        color: white; font-weight: bold; font-size: 18px;">
+                {i}
+            </div>
+            """, unsafe_allow_html=True)
         
         with col2:
-            st.subheader("📅 Timeline")
-            st.markdown("""
-            - **Mulai:** Januari 2024
-            - **Selesai:** Februari 2024
-            - **Durasi:** 4 minggu
-            - **Status:** ✅ Selesai
-            """)
+            st.markdown(f"""
+            <div style="padding: 10px 0;">
+                <h4 style="margin: 0; color: #2c3e50; font-size: 18px;">{member['nama']}</h4>
+                <p style="margin: 0; color: #7f8c8d; font-size: 14px;">NIM: {member['nim']}</p>
+            </div>
+            """, unsafe_allow_html=True)
         
-        # Tujuan aplikasi
+        with col3:
+            st.markdown(f"""
+            <div style="padding: 10px 0; text-align: right;">
+                <span style="background: #e8f4f8; color: #1f77b4; padding: 4px 8px; 
+                           border-radius: 12px; font-size: 12px; font-weight: 500;">
+                    Anggota
+                </span>
+            </div>
+            """, unsafe_allow_html=True)
+        
+        if i < len(anggota):
+            st.markdown('<hr style="margin: 15px 0; border: 0.5px solid #ecf0f1;">', unsafe_allow_html=True)
+    
+    # Footer
+    st.markdown("---")
+    st.markdown("""
+    <div style="text-align: center; color: #666; font-style: italic;">
+        <p>Terima kasih telah menggunakan aplikasi kami! 🙏</p>
+        
+        st.markdown("### 👥 Tim Pengembang")
+        
+        # Menggunakan grid layout untuk menampilkan anggota
+        cols = st.columns(3)
+        for idx, anggota_data in enumerate(anggota):
+            with cols[idx % 3]:
+                st.markdown(f"""
+                <div style="
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    color: white;
+                    padding: 20px;
+                    border-radius: 15px;
+                    margin: 10px 0;
+                    text-align: center;
+                    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                ">
+                    <h4 style="margin: 0 0 10px 0; font-size: 16px;">{anggota_data['nama']}</h4>
+                    <p style="margin: 0; font-size: 14px; opacity: 0.9;"><strong>NIM:</strong> {anggota_data['nim']}</p>
+                </div>
+                """, unsafe_allow_html=True)
+        
         st.markdown("---")
-        st.subheader("🎯 Tujuan Aplikasi")
         st.markdown("""
+        ### 🎯 Tujuan Aplikasi
         Aplikasi ini dikembangkan untuk membantu mahasiswa dan praktisi kimia dalam melakukan perhitungan 
         spektrofotometri dengan mudah dan akurat. Semua perhitungan dilakukan secara otomatis dengan 
         interface yang user-friendly.
-        """)
-        
-        # Footer
-      st.markdown("---")
-st.markdown("*Terima kasih telah menggunakan aplikasi kami! 🙏*")
