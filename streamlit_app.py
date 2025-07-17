@@ -472,26 +472,26 @@ with st.container():
     <div style="text-align: center; color: #666; font-style: italic;">
         <p>Terima kasih telah menggunakan aplikasi kami! 🙏</p>
         
-        st.markdown("### 👥 Tim Pengembang")
+      st.markdown("### 👥 Tim Pengembang")
         
-        # Menggunakan grid layout untuk menampilkan anggota
-        cols = st.columns(3)
-        for idx, anggota_data in enumerate(anggota):
-            with cols[idx % 3]:
-                st.markdown(f"""
-                <div style='
-                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                    color: white;
-                    padding: 20px;
-                    border-radius: 15px;
-                    margin: 10px 0;
-                    text-align: center;
-                    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-                ">
-                    <h4 style="margin: 0 0 10px 0; font-size: 16px;">{anggota_data['nama']}</h4>
-                    <p style="margin: 0; font-size: 14px; opacity: 0.9;"><strong>NIM:</strong> {anggota_data['nim']}</p>
-                </div>
-                """, unsafe_allow_html=True)
+# Menggunakan grid layout untuk menampilkan anggota
+cols = st.columns(3)
+for idx, anggota_data in enumerate(anggota):
+    with cols[idx % 3]:
+        st.markdown(f"""
+            <div style='
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                padding: 20px;
+                border-radius: 15px;
+                margin: 10px 0;
+                text-align: center;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            '>
+                <h4 style='margin: 0 0 10px 0; font-size: 16px;'>{anggota_data['nama']}</h4>
+                <p style='margin: 0; font-size: 14px; opacity: 0.9;'><strong>NIM:</strong> {anggota_data['nim']}</p>
+            </div>
+        """, unsafe_allow_html=True)
         
         st.markdown("---")
         st.markdown("""
