@@ -477,6 +477,7 @@ with st.container():
         
         # Footer
         st.markdown("---")
+        st.markdown("""
         <div style="text-align: center; color: #666; font-style: italic;">
-            <p>Terima kasih telah menggunakan aplikasi kami! 🙏</p>
+            <p>Terima kasih telah menggunakan aplikasi kami!🙏</p>
             
