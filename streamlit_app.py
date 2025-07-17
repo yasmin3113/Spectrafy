@@ -443,7 +443,7 @@ with st.container():
             if i < len(anggota):
                 st.markdown('<hr style="margin: 15px 0; border: 0.5px solid #ecf0f1;">', unsafe_allow_html=True)
         
-   # Tujuan aplikasi
+           # Tujuan aplikasi
         st.markdown("---")
         st.subheader("🎯 Tujuan Aplikasi")
         st.markdown("""
