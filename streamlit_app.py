@@ -443,11 +443,35 @@ with st.container():
             if i < len(anggota):
                 st.markdown('<hr style="margin: 15px 0; border: 0.5px solid #ecf0f1;">', unsafe_allow_html=True)
         
-           # Tujuan aplikasi
+        # Informasi tambahan
+        st.markdown("---")
+        
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            st.subheader("🛠️ Teknologi")
+            st.markdown("""
+            - **Framework:** Streamlit
+            - **Bahasa:** Python
+            - **Library:** Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn
+            - **Metode:** Regresi Linear untuk Kurva Kalibrasi
+            """)
+        
+        with col2:
+            st.subheader("📅 Timeline")
+            st.markdown("""
+            - **Mulai:** Januari 2024
+            - **Selesai:** Februari 2024
+            - **Durasi:** 4 minggu
+            - **Status:** ✅ Selesai
+            """)
+        
+        # Tujuan aplikasi
         st.markdown("---")
         st.subheader("🎯 Tujuan Aplikasi")
         st.markdown("""
-        Aplikasi ini dikembangkan untuk membantu mahasiswa dan praktisi kimia dalam melakukan perhitungan dilakukan secara otomatis dengan 
+        Aplikasi ini dikembangkan untuk membantu mahasiswa dan praktisi kimia dalam melakukan perhitungan 
+        spektrofotometri dengan mudah dan akurat. Semua perhitungan dilakukan secara otomatis dengan 
         interface yang user-friendly.
         """)
         
