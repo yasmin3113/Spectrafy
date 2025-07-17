@@ -443,30 +443,7 @@ with st.container():
             if i < len(anggota):
                 st.markdown('<hr style="margin: 15px 0; border: 0.5px solid #ecf0f1;">', unsafe_allow_html=True)
         
-        # Informasi tambahan
-        st.markdown("---")
-        
-        col1, col2 = st.columns(2)
-        
-        with col1:
-            st.subheader("🛠️ Teknologi")
-            st.markdown("""
-            - **Framework:** Streamlit
-            - **Bahasa:** Python
-            - **Library:** Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn
-            - **Metode:** Regresi Linear untuk Kurva Kalibrasi
-            """)
-        
-        with col2:
-            st.subheader("📅 Timeline")
-            st.markdown("""
-            - **Mulai:** Januari 2024
-            - **Selesai:** Februari 2024
-            - **Durasi:** 4 minggu
-            - **Status:** ✅ Selesai
-            """)
-        
-        # Tujuan aplikasi
+   # Tujuan aplikasi
         st.markdown("---")
         st.subheader("🎯 Tujuan Aplikasi")
         st.markdown("""
@@ -475,15 +452,5 @@ with st.container():
         """)
         
         # Footer
-        st.markdown("---")
-        st.markdown("""
-        <div style="text-align: center; padding: 20px; background-color: #f8f9fa; border-radius: 10px;">
-            <p style="margin: 0; color: #6c757d; font-size: 14px;">
-                💡 <strong>Catatan:</strong> Aplikasi ini dikembangkan untuk keperluan edukasi dan penelitian. 
-                Selalu validasi hasil perhitungan dengan metode standar laboratorium.
-            </p>
-            <p style="margin: 10px 0 0 0; color: #495057; font-weight: 500;">
-                🙏 <em>Terima kasih telah menggunakan aplikasi kami!</em>
-            </p>
-        </div>
-        """, unsafe_allow_html=True)
+      st.markdown("---")
+st.markdown("*Terima kasih telah menggunakan aplikasi kami! 🙏*")
