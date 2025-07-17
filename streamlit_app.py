@@ -170,7 +170,6 @@ with st.container():
         <div class='centered'>
             <div class='judul'>Perhitungan Spektrofotometri</div>
             <div class='subjudul'>📚 Selamat Datang di Aplikasi Kami!</div>
-            <div class='img-container'>
                 <img src='https://cdn-icons-png.flaticon.com/512/2933/2933116.png' width='150'/>
             </div>
             <div class='desc'>
