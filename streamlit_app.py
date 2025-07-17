@@ -479,7 +479,7 @@ with st.container():
       st.markdown("---")
 st.markdown(
     """
-    <div style="text-align: center; color: #666; font-style: italic;">
+    <div style='text-align: center; color: #666; font-style: italic;'>
         <p>Terima kasih telah menggunakan aplikasi kami! 🙏</p>
     </div>
     """,
