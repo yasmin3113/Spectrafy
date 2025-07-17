@@ -444,6 +444,29 @@ with st.container():
         if i < len(anggota):
             st.markdown('<hr style="margin: 15px 0; border: 0.5px solid #ecf0f1;">', unsafe_allow_html=True)
     
+    # Informasi tambahan
+    st.markdown("---")
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.subheader("🛠️ Teknologi")
+        st.markdown("""
+        - **Framework:** Streamlit
+        - **Bahasa:** Python
+        - **Library:** Pandas, NumPy, Matplotlib
+        - **Database:** [sesuaikan dengan project]
+        """)
+    
+    with col2:
+        st.subheader("📅 Timeline")
+        st.markdown("""
+        - **Mulai:** [tanggal mulai]
+        - **Selesai:** [tanggal selesai]
+        - **Durasi:** [durasi pengerjaan]
+        - **Status:** ✅ Selesai
+        """)
+    
     # Footer
     st.markdown("---")
     st.markdown("""
