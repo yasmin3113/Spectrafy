@@ -1,3 +1,4 @@
+from streamlit_lottie import st_lottie
 import streamlit as st
 import numpy as np
 import pandas as pd
@@ -7,7 +8,6 @@ import seaborn as sns
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score
 from collections import defaultdict
-from streamlit_lottie import st_lottie
 
 # Fungsi memuat animasi Lottie dari URL
 def load_lottieurl(url: str):
