@@ -208,6 +208,14 @@ if menu == "🏠 Beranda":
     </div>
     """, unsafe_allow_html=True)
 
+  st.markdown("---")
+    st.markdown("""
+        ### 🎯 Tujuan Aplikasi
+        Aplikasi ini dikembangkan untuk membantu mahasiswa dan praktisi kimia dalam melakukan perhitungan 
+        spektrofotometri dengan mudah dan akurat. Semua perhitungan dilakukan secara otomatis dengan 
+        interface yang user-friendly.
+        """)
+
 elif menu == "📌 Standar Induk":
     st.header("📌 1. Pembuatan Larutan Standar Induk")
     
@@ -447,10 +455,4 @@ elif menu == "📖 Tentang Kami":
                 </div>
             """, unsafe_allow_html=True)
 
-    st.markdown("---")
-    st.markdown("""
-        ### 🎯 Tujuan Aplikasi
-        Aplikasi ini dikembangkan untuk membantu mahasiswa dan praktisi kimia dalam melakukan perhitungan 
-        spektrofotometri dengan mudah dan akurat. Semua perhitungan dilakukan secara otomatis dengan 
-        interface yang user-friendly.
-        """)
+  
