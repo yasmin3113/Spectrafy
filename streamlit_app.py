@@ -7,6 +7,7 @@ import seaborn as sns
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score
 from collections import defaultdict
+from streamlit_lottie import st_lottie
 
 # Konfigurasi tampilan
 st.set_page_config(
@@ -170,10 +171,10 @@ with st.container():
         <div class='centered'>
             <div class='judul'>Perhitungan Spektrofotometri</div>
             <div class='subjudul'>📚 Selamat Datang di Aplikasi Kami!</div>
-            <div class='img-container'>
-                <img src='https://cdn-icons-png.flaticon.com/512/2933/2933116.png' width='150'/>
-            </div>
-            <div class='desc'>
+        lottie_json = load_lottieurl("https://lottie.host/6d628372-b83e-4256-a791-e4c68204bd34/ee70UtmL8I.json")
+    if lottie_json:
+        st_lottie(lottie_json, height=200, key="navigasi")
+
                 Aplikasi ini membantu Anda melakukan perhitungan spektrofotometri secara lengkap dan sistematis. 
                 Mulai dari pembuatan larutan standar induk, deret standar, pembuatan kurva kalibrasi, 
                 hingga perhitungan kadar sampel berdasarkan absorbansi yang terukur.
