@@ -1,15 +1,17 @@
-from streamlit_lottie import st_lottie
 import streamlit as st
 import numpy as np
 import pandas as pd
 import re
 import matplotlib.pyplot as plt
 import seaborn as sns
+import requests
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score
 from collections import defaultdict
+from streamlit_lottie import st_lottie
 
-# Fungsi memuat animasi Lottie dari URL
+# Fungsi untuk load Lottie
+
 def load_lottieurl(url: str):
     r = requests.get(url)
     if r.status_code != 200:
@@ -23,7 +25,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# CSS untuk styling yang lebih baik
+# CSS untuk styling
 st.markdown("""
 <style>
     .main-content {
@@ -59,9 +61,6 @@ st.markdown("""
         line-height: 1.6;
         text-align: justify;
     }
-    .img-container {
-        margin: 20px 0 30px 0;
-    }
     .menu-header {
         font-size: 24px;
         font-weight: bold;
@@ -73,28 +72,26 @@ st.markdown("""
 
 # Sidebar Navigation
 with st.sidebar:
-    st.markdown('<div class="menu-header">📋 Menu Navigasi</div>', unsafe_allow_html=True)
-    
+    st.markdown('<div class="menu-header">\ud83d\udccb Menu Navigasi</div>', unsafe_allow_html=True)
     menu = st.radio(
         "Pilih Halaman:",
         [
-            "🏠 Beranda",
-            "📌 Standar Induk", 
-            "📊 Deret Standar",
-            "📈 Kurva Kalibrasi",
-            "🧪 Kadar Sampel",
-            "📖 Tentang Kami"
+            "\ud83c\udfe0 Beranda",
+            "\ud83d\udccc Standar Induk", 
+            "\ud83d\udcca Deret Standar",
+            "\ud83d\udcc8 Kurva Kalibrasi",
+            "\ud83e\uddea Kadar Sampel",
+            "\ud83d\udcd6 Tentang Kami"
         ],
         key="navigation_menu"
     )
-    
     st.markdown("---")
-    st.markdown("**💡 Tips:**")
+    st.markdown("**\ud83d\udca1 Tips:**")
     st.markdown("- Ikuti urutan menu dari atas ke bawah")
     st.markdown("- Pastikan input data sudah benar")
     st.markdown("- Gunakan titik (.) untuk desimal")
 
-# Data Massa Atom Relatif
+# Data massa atom
 massa_atom = {
     "H": 1.008, "He": 4.0026, "Li": 6.94, "Be": 9.0122, "B": 10.81, "C": 12.01,
     "N": 14.007, "O": 16.00, "F": 18.998, "Ne": 20.180, "Na": 22.990, "Mg": 24.305,
@@ -118,10 +115,10 @@ massa_atom = {
 }
 
 def parse_formula(formula):
-    formula = formula.replace("·", ".")
+    formula = formula.replace("\u00b7", ".")
     parts = formula.split(".")
     total_elements = defaultdict(int)
-    
+
     def parse(part, multiplier=1):
         stack = []
         i = 0
@@ -155,13 +152,13 @@ def parse_formula(formula):
                     stack[-1][0][el] = stack[-1][0].get(el, 0) + count
                 else:
                     total_elements[el] += count * multiplier
-    
+
     for part in parts:
         match = re.match(r'^(\d+)([A-Z(].*)', part)
         mul = int(match.group(1)) if match else 1
         formula_part = match.group(2) if match else part
         parse(formula_part, multiplier=mul)
-    
+
     return total_elements
 
 def hitung_bm(formula):
@@ -171,32 +168,37 @@ def hitung_bm(formula):
     total = sum(massa_atom[el] * jumlah for el, jumlah in parsed.items())
     return round(total, 4)
 
-# Main Content Area
-with st.container():
-    if menu == "🏠 Beranda":
-        st.markdown("""
-        <div class='centered'>
-            <div class='judul'>Perhitungan Spektrofotometri</div>
-            <div class='subjudul'>📚 Selamat Datang di Aplikasi Kami!</div>
-        lottie_json = load_lottieurl("https://lottie.host/6d628372-b83e-4256-a791-e4c68204bd34/ee70UtmL8I.json")
+# ===========================
+# MAIN CONTENT STARTS HERE
+# ===========================
+if menu == "\ud83c\udfe0 Beranda":
+    st.markdown("""
+    <div class='centered'>
+        <div class='judul'>Perhitungan Spektrofotometri</div>
+        <div class='subjudul'>\ud83d\udcda Selamat Datang di Aplikasi Kami!</div>
+        <div class='desc'>
+            Aplikasi ini membantu Anda melakukan perhitungan spektrofotometri secara lengkap dan sistematis. 
+            Mulai dari pembuatan larutan standar induk, deret standar, pembuatan kurva kalibrasi, 
+            hingga perhitungan kadar sampel berdasarkan absorbansi yang terukur.<br><br>
+            <strong>Fitur Utama:</strong><br>
+            \u2705 Perhitungan otomatis BM/Mr dari rumus kimia<br>
+            \u2705 Pembuatan larutan standar dari zat padat atau larutan pekat<br>
+            \u2705 Perhitungan deret standar dengan berbagai konsentrasi<br>
+            \u2705 Pembuatan kurva kalibrasi dengan regresi linear<br>
+            \u2705 Analisis kadar sampel dengan statistik lengkap<br><br>
+            <em>Silakan pilih menu di sidebar untuk memulai perhitungan!</em>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    lottie_json = load_lottieurl("https://lottie.host/6d628372-b83e-4256-a791-e4c68204bd34/ee70UtmL8I.json")
     if lottie_json:
         st_lottie(lottie_json, height=200, key="navigasi")
 
-                Aplikasi ini membantu Anda melakukan perhitungan spektrofotometri secara lengkap dan sistematis. 
-                Mulai dari pembuatan larutan standar induk, deret standar, pembuatan kurva kalibrasi, 
-                hingga perhitungan kadar sampel berdasarkan absorbansi yang terukur.
-                <br><br>
-                <strong>Fitur Utama:</strong><br>
-                ✅ Perhitungan otomatis BM/Mr dari rumus kimia<br>
-                ✅ Pembuatan larutan standar dari zat padat atau larutan pekat<br>
-                ✅ Perhitungan deret standar dengan berbagai konsentrasi<br>
-                ✅ Pembuatan kurva kalibrasi dengan regresi linear<br>
-                ✅ Analisis kadar sampel dengan statistik lengkap<br>
-                <br>
-                <em>Silakan pilih menu di sidebar untuk memulai perhitungan!</em>
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
+# (Seluruh menu lain seperti Standar Induk, Deret Standar, Kurva Kalibrasi, Kadar Sampel, dan Tentang Kami
+# tetap sama seperti yang sudah Anda tulis sebelumnya. Jika ingin saya lengkapi semua halaman dalam satu file,
+# beri tahu saya dan saya akan lanjutkan penulisan ke bawah.)
+
     
     elif menu == "📌 Standar Induk":
         st.header("📌 1. Pembuatan Larutan Standar Induk")
