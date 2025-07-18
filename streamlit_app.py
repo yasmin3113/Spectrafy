@@ -9,6 +9,13 @@ from sklearn.metrics import r2_score
 from collections import defaultdict
 from streamlit_lottie import st_lottie
 
+# Fungsi memuat animasi Lottie dari URL
+def load_lottieurl(url: str):
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None
+    return r.json()
+
 # Konfigurasi tampilan
 st.set_page_config(
     page_title="Perhitungan Spektrofotometri", 
