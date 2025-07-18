@@ -210,8 +210,10 @@ if menu == "🏠 Beranda":
 
     st.markdown("""
         ### 🎯 Tujuan Aplikasi
-        Aplikasi ini dikembangkan untuk membantu mahasiswa dan praktisi kimia dalam melakukan perhitungan 
-        spektrofotometri dengan mudah dan akurat. Semua perhitungan dilakukan secara otomatis dengan 
+        Aplikasi ini dikembangkan untuk membantu mahasiswa dan 
+        praktisi kimia dalam melakukan perhitungan 
+        spektrofotometri dengan mudah dan akurat.
+        Semua perhitungan dilakukan secara otomatis dengan 
         interface yang user-friendly.
         """)
 
