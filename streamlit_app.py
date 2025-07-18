@@ -435,35 +435,22 @@ elif menu == "📖 Tentang Kami":
     ]
     
     st.markdown("### 👥 Tim Pengembang")
-    
-    # Menggunakan grid layout untuk menampilkan anggota
+
+    # Grid sederhana tanpa styling kotak
     cols = st.columns(3)
     for idx, anggota_data in enumerate(anggota):
         with cols[idx % 3]:
             st.markdown(f"""
-            <div style="
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                color: white;
-                padding: 20px;
-                border-radius: 15px;
-                margin: 10px 0;
-                text-align: center;
-                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            ">
-                <h4 style="margin: 0 0 10px 0; font-size: 16px;">{anggota_data['nama']}</h4>
-                <p style="margin: 0; font-size: 14px; opacity: 0.9;"><strong>NIM:</strong> {anggota_data['nim']}</p>
-            </div>
+                <div style="padding: 10px; text-align: center;">
+                    <strong>{anggota_data['nama']}</strong><br>
+                    NIM: {anggota_data['nim']}
+                </div>
             """, unsafe_allow_html=True)
-    
+
     st.markdown("---")
     st.markdown("""
     ### 🎯 Tujuan Aplikasi
     Aplikasi ini dikembangkan untuk membantu mahasiswa dan praktisi kimia dalam melakukan perhitungan 
     spektrofotometri dengan mudah dan akurat. Semua perhitungan dilakukan secara otomatis dengan 
     interface yang user-friendly.
-    
-    ### 📚 Referensi
-    - Fundamentals of Analytical Chemistry - Skoog & West
-    - Quantitative Chemical Analysis - Harris
-    - Instrumental Analysis - Willard, Merritt, Dean & Settle
-    """)
+   
