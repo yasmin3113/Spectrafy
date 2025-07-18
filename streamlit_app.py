@@ -176,18 +176,27 @@ def hitung_bm(formula):
 # ===========================
 
 if menu == "🏠 Beranda":
-      lottie_json = load_lottieurl("https://lottie.host/6d628372-b83e-4256-a791-e4c68204bd34/ee70UtmL8I.json")
-    if lottie_json:
-        st_lottie(lottie_json, height=200, key="navigasi")
-        
+    # Tampilkan judul dan subjudul
     st.markdown("""
     <div class='centered'>
         <div class='judul'>Perhitungan Spektrofotometri</div>
         <div class='subjudul'>📚 Selamat Datang di Aplikasi Kami!</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Tampilkan animasi tepat di bawah judul
+    lottie_json = load_lottieurl("https://lottie.host/6d628372-b83e-4256-a791-e4c68204bd34/ee70UtmL8I.json")
+    if lottie_json:
+        st_lottie(lottie_json, height=200, key="navigasi")
+
+    # Tampilkan deskripsi aplikasi
+    st.markdown("""
+    <div class='centered'>
         <div class='desc'>
             Aplikasi ini membantu Anda melakukan perhitungan spektrofotometri secara lengkap dan sistematis. 
             Mulai dari pembuatan larutan standar induk, deret standar, pembuatan kurva kalibrasi, 
-            hingga perhitungan kadar sampel berdasarkan absorbansi yang terukur.<br><br>
+            hingga perhitungan kadar sampel berdasarkan absorbansi yang terukur.
+            <br><br>
             <strong>Fitur Utama:</strong><br>
             ✅ Perhitungan otomatis BM/Mr dari rumus kimia<br>
             ✅ Pembuatan larutan standar dari zat padat atau larutan pekat<br>
