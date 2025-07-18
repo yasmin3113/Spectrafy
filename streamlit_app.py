@@ -448,8 +448,9 @@ elif menu == "📖 Tentang Kami":
             """, unsafe_allow_html=True)
 
     st.markdown("---")
-    st.markdown("""
-    ### 🎯 Tujuan Aplikasi
-    Aplikasi ini dikembangkan untuk membantu mahasiswa dan praktisi kimia dalam melakukan perhitungan 
-    spektrofotometri dengan mudah dan akurat. Semua perhitungan dilakukan secara otomatis dengan 
-    interface yang user-friendly.
+st.markdown("""
+### 🎯 Tujuan Aplikasi
+Aplikasi ini dikembangkan untuk membantu mahasiswa dan praktisi kimia dalam melakukan perhitungan 
+spektrofotometri dengan mudah dan akurat. Semua perhitungan dilakukan secara otomatis dengan 
+interface yang user-friendly.
+""")
