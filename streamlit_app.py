@@ -359,7 +359,9 @@ elif menu == "🧪 Kadar Sampel":
     with col2:
         volume_labu_str = st.text_input("Volume Labu Takar (mL)", placeholder="Contoh: 100")
     with col3:
-        bobot_sample_str = st.text_input("Bobot Sampel (gram)", placeholder="Contoh: 1.0000")
+        bobot_sample simplo_str = st.text_input("Bobot Sampel (gram)", placeholder="Contoh: 1.0000")
+    with col4 :
+        bobot_sample duplo_str = st.text_input("Bobot Sampel (gram)", placeholder="contoh: 1.0000")
     
     if st.button("Hitung Kadar Sampel"):
         try:
